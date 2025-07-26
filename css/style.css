@@ -1,0 +1,66 @@
+body {
+  background-color: #fff;
+}
+
+header {
+  background-color: #e36d8a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+header .titulo {
+  font-size: 26px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  color: #fff;
+}
+
+#index main {
+  height: calc(100vh - 69px);
+  h1 {
+    color: #fff;
+  }
+  section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    .card {
+      width: 300px;
+      padding: 0.8rem 0.8rem 0.3rem;
+      .img-wrapper {
+        height: 152px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+      a {
+        background-color: #e36d8a;
+        border-color: #e36d8a;
+      }
+    }
+  }
+}
+
+#producto section,
+.text-muted,
+#producto h1 {
+  color: white !important;
+}
+
+#producto section button {
+  background-color: #e36d8a;
+  border-color: #e36d8a;
+}
+
+#producto header a {
+  text-decoration: none;
+}
