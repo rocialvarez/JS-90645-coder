@@ -12,7 +12,7 @@ const albumes = [
     name: "Dimension: Dilemma",
     group: "Enhypen",
     description:
-      "Primer álbum de estudio de ENHYPEN, lanzado el 12 de octubre de 2021. Consta de 8 canciones, incluida la poderosa Tamed‑Dazed. Disponible en múltiples versiones visuales como Scylla, Odysseus y Charybdis.",
+      "Primer álbum de estudio de ENHYPEN, lanzado el 12 de octubre de 2021. Consta de 8 canciones, incluida la poderosa Tamed‑Dashed. Disponible en múltiples versiones visuales como Scylla, Odysseus y Charybdis.",
     price: "31_000",
   },
   {
