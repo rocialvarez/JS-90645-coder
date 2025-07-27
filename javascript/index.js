@@ -7,8 +7,7 @@ const misProd = albumes.map(
     <div class="card-body">
       <h5 class="card-title">${album.name} - ${album.group}</h5>
       <p class="card-text">
-					Some quick example text to build on the card title and
-					make up the bulk of the card's content.
+					${album.description}
 				</p>
       <a href="./info.html?id=${album.id}" class="btn btn-primary">
         Más información

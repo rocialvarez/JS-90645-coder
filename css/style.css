@@ -1,5 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
 }
 
 header {
@@ -13,7 +21,7 @@ header {
 }
 
 header .titulo {
-  font-size: 26px;
+  font-size: 25px;
   font-weight: 300;
   display: flex;
   flex-direction: row;
@@ -25,6 +33,7 @@ header .titulo {
 
 #index main {
   height: calc(100vh - 69px);
+  margin: 5em 5em;
   h1 {
     color: #fff;
   }
