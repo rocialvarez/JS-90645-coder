@@ -32,3 +32,5 @@ const albumes = [
     price: "35000",
   },
 ];
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
