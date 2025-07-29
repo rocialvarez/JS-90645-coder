@@ -33,4 +33,4 @@ const albumes = [
   },
 ];
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+localStorage.setItem("albumes", JSON.stringify(albumes));
