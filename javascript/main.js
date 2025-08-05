@@ -14,7 +14,7 @@ function handleClick() {
   const li = document.createElement("li");
   const span = document.createElement("span");
   const borrar = document.createElement("img");
-  borrar.src = "./medios/borrar-opcion.png";
+  borrar.src = "../medios/borrar-opcion.png";
   borrar.onclick = () => li.remove();
   span.textContent = input.value;
   li.appendChild(span);

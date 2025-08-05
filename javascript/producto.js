@@ -1,3 +1,5 @@
+const albumRecuperado = JSON.parse(localStorage.getItem("albumes"));
+
 const params = new URLSearchParams(window.location.search);
 const albumId = params.get("id");
 
@@ -20,4 +22,4 @@ const p = document.querySelector("p");
 p.textContent = album.description;
 
 const img = document.querySelector("img");
-img.src = `./medios/${album.id}.jpg`;
+img.src = `../medios/${album.id}.jpg`;

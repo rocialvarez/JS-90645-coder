@@ -1,11 +1,11 @@
-const section = document.querySelector("section.misProd");
+const albumRecuperado = JSON.parse(localStorage.getItem("albumes"));
 
-const albumes = JSON.parse(localStorage.getItem("albumes"));
+const section = document.querySelector("section.misProd");
 
 const misProd = albumes.map(
   (album) =>
     `<div class="card" style="width: 300px">
-    <img src="./medios/${album.id}.jpg" class="card-img-top" alt="..." />
+    <img src="../medios/${album.id}.jpg" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">${album.name} - ${album.group}</h5>
       <p class="card-text">
