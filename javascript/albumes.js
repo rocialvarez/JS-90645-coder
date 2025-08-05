@@ -33,4 +33,4 @@ const albumes = [
   },
 ];
 
-localStorage.setItem("albumes", JSON.stringify(albumes));
+localStorage.setItem("albumes", JSON.stringify(album));

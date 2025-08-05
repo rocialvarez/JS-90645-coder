@@ -1,4 +1,4 @@
-const albumRecuperado = JSON.parse(localStorage.getItem("albumes"));
+const albumRecuperado = JSON.parse(localStorage.getItem("album"));
 
 const params = new URLSearchParams(window.location.search);
 const albumId = params.get("id");

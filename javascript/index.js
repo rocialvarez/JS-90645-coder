@@ -1,4 +1,4 @@
-const albumRecuperado = JSON.parse(localStorage.getItem("albumes"));
+const albumRecuperado = JSON.parse(localStorage.getItem("album"));
 
 const section = document.querySelector("section.misProd");
 
