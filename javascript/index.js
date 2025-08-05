@@ -11,8 +11,7 @@ const misProd = albumes.map(
       <p class="card-text">
 					${album.description}
 				</p>
-      <a href="../producto.html?id=${album.id}" class="btn btn-primary">
-        Más información
+      <a href="../html/productos.html?id=${album.id}" class="btn btn-primary">Más información
       </a>
     </div>
   </div>`
