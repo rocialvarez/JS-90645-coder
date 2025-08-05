@@ -1,5 +1,7 @@
 const section = document.querySelector("section.misProd");
 
+const albumes = JSON.parse(localStorage.getItem("albumes"));
+
 const misProd = albumes.map(
   (album) =>
     `<div class="card" style="width: 300px">
