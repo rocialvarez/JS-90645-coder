@@ -10,8 +10,8 @@ carritoAlmacenado.items.forEach((item) => {
   const span = document.createElement('span');
   const borrar = document.createElement('img');
 
-  li.textContent = `${item.name} - $${item.total}`;
-  span.textContent = item.cantidad;
+  li.textContent = `${album.name} - $${total}`;
+  span.textContent = input.value;
   borrar.src = '../medios/borrar-opcion.png';
 
   borrar.onclick = () => {
