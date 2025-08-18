@@ -3,22 +3,22 @@ const input = document.querySelector('input');
 const error = document.querySelector('.bg-danger');
 const ul = document.querySelector('ul');
 
-const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
+const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { albumesGuardados: [] };
 
-carritoAlmacenado.items.forEach((item) => {
+carritoAlmacenado.albumesGuardados.forEach((item) => {
   const li = document.createElement('li');
   const span = document.createElement('span');
   const borrar = document.createElement('img');
 
-  li.textContent = `${album.name} - $${total}`;
+  li.textContent = `${albumesGuardados.nombre} - $${albumesGuardados.total}`;
   span.textContent = input.value;
   borrar.src = '../medios/borrar-opcion.png';
 
   borrar.onclick = () => {
     li.remove();
-    const index = carritoAlmacenado.items.indexOf(item);
+    const index = carritoAlmacenado.albumesGuardados.indexOf(item);
     if (index > -1) {
-      carritoAlmacenado.items.splice(index, 1);
+      carritoAlmacenado.albumesGuardados.splice(index, 1);
       localStorage.setItem('carrito', JSON.stringify(carritoAlmacenado));
     }
   };
@@ -44,14 +44,14 @@ function handleClick() {
 
   const total = album.price * input.value;
 
-  const item = {
+  const albumesGuardados = {
     nombre: album.name,
     precio: album.price,
     cantidad: Number(input.value),
     total: total,
   };
 
-  carritoAlmacenado.items.push(item);
+  carritoAlmacenado.albumesGuardados.push(item);
   localStorage.setItem('carrito', JSON.stringify(carritoAlmacenado));
 
   const li = document.createElement('li');
