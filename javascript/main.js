@@ -3,7 +3,30 @@ const input = document.querySelector('input');
 const error = document.querySelector('.bg-danger');
 const ul = document.querySelector('ul');
 
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
+
+carritoAlmacenado.items.forEach((item) => {
+  const li = document.createElement('li');
+  const span = document.createElement('span');
+  const borrar = document.createElement('img');
+
+  li.textContent = `${item.name} - $${item.total}`;
+  span.textContent = item.cantidad;
+  borrar.src = '../medios/borrar-opcion.png';
+
+  borrar.onclick = () => {
+    li.remove();
+    const index = carritoAlmacenado.items.indexOf(item);
+    if (index > -1) {
+      carritoAlmacenado.items.splice(index, 1);
+      localStorage.setItem('carrito', JSON.stringify(carritoAlmacenado));
+    }
+  };
+
+  li.appendChild(span);
+  li.appendChild(borrar);
+  ul.appendChild(li);
+});
 
 button.addEventListener('click', handleClick);
 input.addEventListener('keydown', handleHide);
@@ -19,32 +42,32 @@ function handleClick() {
     return;
   }
 
+  const total = album.price * input.value;
+
+  const item = {
+    nombre: album.name,
+    precio: album.price,
+    cantidad: Number(input.value),
+    total: total,
+  };
+
+  carritoAlmacenado.items.push(item);
+  localStorage.setItem('carrito', JSON.stringify(carritoAlmacenado));
+
   const li = document.createElement('li');
   const span = document.createElement('span');
   const borrar = document.createElement('img');
-
-  const total = album.price * input.value;
 
   borrar.src = '../medios/borrar-opcion.png';
   borrar.onclick = () => li.remove();
   li.textContent = `${album.name} - $${total}`;
   span.textContent = input.value;
+
   li.appendChild(span);
   li.appendChild(borrar);
   ul.appendChild(li);
   input.value = '';
 }
-
-carrito.push({
-  name: album.name,
-  price: album.price,
-  quantity: Number(input.value),
-  total: total,
-});
-
-localStorage.setItem('carrito', JSON.stringify(carrito));
-
-input.value = '';
 
 function handleHide() {
   error.classList.add('d-none');
