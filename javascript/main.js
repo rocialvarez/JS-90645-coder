@@ -3,9 +3,8 @@ const input = document.querySelector('input');
 const error = document.querySelector('.bg-danger');
 const ul = document.querySelector('ul');
 
-const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
-
 const album = JSON.parse(localStorage.getItem('albumes'));
+const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
 
 carritoAlmacenado.items.forEach((item) => {
   const li = document.createElement('li');
