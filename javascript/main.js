@@ -5,7 +5,7 @@ const ul = document.querySelector('ul');
 
 const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
 
-const album = JSON.parse(localStorage.getItem('album'));
+const album = JSON.parse(localStorage.getItem('albumes'));
 
 carritoAlmacenado.items.forEach((item) => {
   const li = document.createElement('li');
