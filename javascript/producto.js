@@ -1,25 +1,44 @@
-const albumRecuperado = JSON.parse(localStorage.getItem("album"));
+const albumRecuperado = JSON.parse(localStorage.getItem('album'));
 
 const params = new URLSearchParams(window.location.search);
-const albumId = params.get("id");
+const albumId = params.get('id');
 
-const album = albumes.find((a) => a.id === Number(albumId));
+fetch('../data/albumes.json')
+  .then((response) => response.json())
+  .then((albumes) => {
+    const album = albumes.find((a) => a.id === Number(albumId));
 
-const h1 = document.querySelector("h1");
+    if (album) {
+      const h1 = document.querySelector('h1');
 
-h1.textContent = album.name;
+      h1.textContent = album.name;
 
-const h2 = document.querySelector("h2");
+      const h2 = document.querySelector('h2');
 
-h2.textContent = album.group;
+      h2.textContent = album.group;
 
-const h4 = document.querySelector("h4");
+      const h4 = document.querySelector('h4');
 
-h4.textContent = album.price;
+      h4.textContent = album.price;
 
-const p = document.querySelector("p");
+      const p = document.querySelector('p');
 
-p.textContent = album.description;
+      p.textContent = album.description;
 
-const img = document.querySelector("img");
-img.src = `../medios/${album.id}.jpg`;
+      const img = document.querySelector('img');
+      img.src = `../medios/${album.id}.jpg`;
+    } else {
+      Swal.fire({
+        title: 'Oops',
+        text: 'El álbum que intentas ver no existe.',
+        icon: 'warning',
+      });
+    }
+  })
+  .catch(() => {
+    Swal.fire({
+      title: 'Error',
+      text: 'Los albumes no pudieron cargarse.',
+      icon: 'error',
+    });
+  });
