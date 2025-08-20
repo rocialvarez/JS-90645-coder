@@ -3,7 +3,7 @@ const input = document.querySelector('input');
 const error = document.querySelector('.bg-danger');
 const ul = document.querySelector('ul');
 
-const album = JSON.parse(localStorage.getItem('albumes'));
+const album = JSON.parse(localStorage.getItem('album'));
 const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
 
 carritoAlmacenado.items.forEach((item) => {

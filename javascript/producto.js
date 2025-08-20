@@ -9,6 +9,7 @@ fetch('../data/albumes.json')
     const album = albumes.find((a) => a.id === Number(albumId));
 
     if (album) {
+      localStorage.setItem('album', JSON.stringify(album));
       const h1 = document.querySelector('h1');
 
       h1.textContent = album.name;
