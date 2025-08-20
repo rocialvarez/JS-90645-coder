@@ -1,6 +1,6 @@
-const albumRecuperado = JSON.parse(localStorage.getItem("album"));
+const albumRecuperado = JSON.parse(localStorage.getItem('album'));
 
-const section = document.querySelector("section.misProd");
+const section = document.querySelector('section.misProd');
 
 const misProd = albumes.map(
   (album) =>
@@ -17,4 +17,4 @@ const misProd = albumes.map(
   </div>`
 );
 
-section.innerHTML = misProd.join(" ");
+section.innerHTML = misProd.join(' ');
