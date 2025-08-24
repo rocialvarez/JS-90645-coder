@@ -2,7 +2,7 @@ const button = document.querySelector('button');
 const input = document.querySelector('input');
 const ul = document.querySelector('ul');
 
-const album = JSON.parse(localStorage.getItem('albumes'));
+const album = JSON.parse(localStorage.getItem('album'));
 const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
 
 carritoAlmacenado.items.forEach((item) => {

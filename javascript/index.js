@@ -1,10 +1,13 @@
-const albumRecuperado = JSON.parse(localStorage.getItem('album'));
+const albumRecuperado = JSON.parse(localStorage.getItem('albumes'));
 
-const section = document.querySelector('section.misProd');
+fetch('./data/albumes.json')
+  .then((res) => res.json())
+  .then((albumes) => {
+    const section = document.querySelector('section.misProd');
 
-const misProd = albumes.map(
-  (album) =>
-    `<div class="card" style="width: 300px">
+    const misProd = albumes.map(
+      (album) =>
+        `<div class="card" style="width: 300px">
     <img src="./medios/${album.id}.jpg" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">${album.name} - ${album.group}</h5>
@@ -15,6 +18,7 @@ const misProd = albumes.map(
       </a>
     </div>
   </div>`
-);
+    );
 
-section.innerHTML = misProd.join(' ');
+    section.innerHTML = misProd.join(' ');
+  });
