@@ -1,9 +1,8 @@
 const button = document.querySelector('button');
 const input = document.querySelector('input');
-const error = document.querySelector('.bg-danger');
 const ul = document.querySelector('ul');
 
-const album = JSON.parse(localStorage.getItem('album'));
+const album = JSON.parse(localStorage.getItem('albumes'));
 const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
 
 carritoAlmacenado.items.forEach((item) => {
@@ -30,7 +29,6 @@ carritoAlmacenado.items.forEach((item) => {
 });
 
 button.addEventListener('click', handleClick);
-input.addEventListener('keydown', handleHide);
 
 function handleClick() {
   if (input.value === '') {
@@ -68,8 +66,4 @@ function handleClick() {
   li.appendChild(borrar);
   ul.appendChild(li);
   input.value = '';
-}
-
-function handleHide() {
-  error.classList.add('d-none');
 }
