@@ -2,7 +2,6 @@ const button = document.querySelector('button');
 const input = document.querySelector('input');
 const ul = document.querySelector('ul');
 
-const album = JSON.parse(localStorage.getItem('album'));
 const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito')) || { items: [] };
 
 carritoAlmacenado.items.forEach((item) => {
@@ -41,9 +40,12 @@ function handleClick() {
     return;
   }
 
+  const album = JSON.parse(localStorage.getItem('album'));
+
   const total = album.price * input.value;
 
   const item = {
+    id: album.id,
     nombre: album.name,
     precio: album.price,
     cantidad: Number(input.value),
